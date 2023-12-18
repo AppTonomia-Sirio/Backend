@@ -15,6 +15,7 @@ psycopg2 = "^2.9.9"
 django-polymorphic = "^3.1.0"
 django-rest-polymorphic = "^0.1.10"
 django-filter = "^23.3"
+whitenoise = "6.6.0"
 
 
 [build-system]
