@@ -2,7 +2,7 @@ name: Python CI
 
 on:
   push:
-
+    branches: [ "main" ]
 env:
   AZURE_WEBAPP_NAME: apptonomia
   AZURE_WEBAPP_PACKAGE_PATH: './app'
