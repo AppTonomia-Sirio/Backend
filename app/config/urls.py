@@ -15,11 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path, re_path
-from rest_framework.documentation import include_docs_urls
+from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls), # Django admin
-    re_path(r'users/', include('users.urls')), # Users functionality
-    path('docs/', include_docs_urls(title='SirioAPI', public=True)), # API auto documentation
+    path('admin/', admin.site.urls),
 ]
