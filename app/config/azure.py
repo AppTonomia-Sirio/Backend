@@ -28,5 +28,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Local
+    "config.middleware.NotFoundMiddleware",
+    "config.middleware.InternalServerError",
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
