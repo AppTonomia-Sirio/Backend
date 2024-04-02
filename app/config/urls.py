@@ -14,12 +14,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import include, path, re_path
 from rest_framework.documentation import include_docs_urls
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls), # Django admin
-    re_path(r'users/', include('users.urls')), # Users functionality
-    path('docs/', include_docs_urls(title='SirioAPI', public=True)), # API auto documentation
-]
+    path("admin/", admin.site.urls),  # Django admin
+    re_path(r"users/", include("users.urls")),  # Users functionality
+    path(
+        "docs/", include_docs_urls(title="SirioAPI", public=True)
+    ),  # API auto documentation
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

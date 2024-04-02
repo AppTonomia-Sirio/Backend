@@ -78,6 +78,7 @@ This project is licensed under the GNU License - see the [LICENSE](LICENSE) file
 
 ### Authors and Contributors
 - [**Fedor Kunin**](https://www.linkedin.com/in/fedor-kunin-015b9b254/)
+- [**Adrián Puyet Muñoz**](https://github.com/Rowiz49)
 
 ### Code of Conduct
 
