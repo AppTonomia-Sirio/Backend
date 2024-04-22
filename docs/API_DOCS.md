@@ -92,8 +92,11 @@ The response will be:
 }
 ```
 The `status` field is the status of the account, it can be one of the following values: `{Active, Pending, Frozen, Locked, Suspended}`.
+
 The `educators` field is an array of the educators IDs assigned to the NNA.
+
 The `main_educator` field is the ID of the main educator.
+
 The `therapist` field is the ID of the therapist assigned to the NNA.
 
 ### Signing up as a Staff user
