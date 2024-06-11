@@ -87,6 +87,8 @@ TEMPLATES = [
         },
     },
 ]
+# Logging to a file
+REQUEST_LOGGING_ENABLE_COLORIZE = False
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -108,6 +110,7 @@ LOGGING = {
         },
     },
 }
+
 WSGI_APPLICATION = "config.wsgi.application"
 
 # Database
