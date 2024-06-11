@@ -16,7 +16,6 @@ from warnings import warn
 from uuid import uuid1
 from django.utils.translation import gettext_lazy as _
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -65,6 +64,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.locale.LocaleMiddleware",
+    "request_logging.middleware.LoggingMiddleware",
     # Local
     "config.middleware.NotFoundMiddleware",
     "config.middleware.InternalServerError",
@@ -87,7 +87,27 @@ TEMPLATES = [
         },
     },
 ]
-
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+        "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": "logs/logs.log",
+        },
+    },
+    "loggers": {
+        "django.request": {
+            "handlers": ["file"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+    },
+}
 WSGI_APPLICATION = "config.wsgi.application"
 
 # Database
